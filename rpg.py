@@ -40,3 +40,17 @@ def init_game():
 		
 
 init_game()
+
+''''
+def batalha():
+	mage = Mage("jss")
+	battle = Battle_system()
+
+	atack = mage.freeze_attack()
+
+	for i in range(1,10):
+		battle.battle(6, 2)
+
+
+batalha()
+''''
