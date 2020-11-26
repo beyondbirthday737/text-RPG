@@ -6,11 +6,8 @@ class Battle_system():
 	def __init__(self):
 		self.grp = Game_rules_proxy()
 		
-		
-	def battle(self, dice_player_value, dice_enemy_value, player_damange, enemy_damange):
-		print(f"\n\n[x] Player life: {self.grp.get_life_player()}")
-		print(f"[x] Enemy life: {self.grp.get_enemy_life()}")
 
+	def battle(self, dice_player_value, dice_enemy_value, player_damange, enemy_damange):
 		if(dice_player_value < dice_enemy_value):
 			print("Voce atacou")
 			self.grp.set_life_player((self.grp.get_life_player() - enemy_damange))
@@ -24,3 +21,5 @@ class Battle_system():
 		if(self.grp.get_enemy_life() <= 0):
 			print("O inimigo morreu!!!")
 			
+		print(f"\n\n[x] Player life: {self.grp.get_life_player()}")
+		print(f"[x] Enemy life: {self.grp.get_enemy_life()}")

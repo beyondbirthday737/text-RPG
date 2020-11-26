@@ -67,6 +67,9 @@ class Main_game:
 
 
     def fase1(self):
+        self.enemy = Minotaur()
+        self.battle_sys.grp.set_enemy_life(self.enemy.enemy_life)
+
         text = f"""{self.name_hero}: ...
 Você acorda em lugar escuro.
 {self.name_hero}: arggh. Onde estou?"""
@@ -81,12 +84,13 @@ Você acorda em lugar escuro.
             action = int(input("ação --> "))
 
             if action == 1:
-                self.enemy = Minotaur()
                 print('\n')
                 self.writer_effect("Você consegue encontrar uma porta .Ao abrir a porta você encontra uma criatura horrenda, com chifres e 2 metros de altura.")
-                print("\nPreparese para lutar")
+
                 print(enemys_arts[1])
+                print("\nPreparese para lutar")
                 self.figthing()
+
                 self.writer_effect("Após uma batalha intensa você consegue derrotar o minotaur")
                 self.writer_effect(f"\n{self.name_hero}: Arg. Estou tonto...\n{self.name_hero}: Tenho que sair daqui de alguma maneira.\n")
                 self.writer_effect(f"\nVocê desmaia")
@@ -94,7 +98,7 @@ Você acorda em lugar escuro.
             
             elif action == 2:
                 print("\n")
-                self.writer_effect("Você grita e nada acontece.")
+                self.writer_effect("\nVocê grita e nada acontece.")
              
             else: 
                 print("[!] OPÇÃO INVALIDA!")
@@ -103,25 +107,87 @@ Você acorda em lugar escuro.
     
 
     def fase2(self):
-        self.writer_effect(f"\n Que lugar é esse ?")
+        self.enemy = Basilisk()
+        self.battle_sys.grp.set_enemy_life(self.enemy.enemy_life)
+        self.battle_sys.grp.set_life_player(10)
+
+        self.writer_effect(f"\n\n\n{self.name_hero}: Que lugar é esse ?")
         self.writer_effect(f"\n{self.name_hero}: Como eu vim parar aqui? ")
         self.writer_effect("\nVoçê acorda em um deserto")
 
         while True:
-            print("[!] Escolha uma ação")
+            print("\n\n[!] Escolha uma ação")
             print("[+] 1-Observar ao redor")
             print("[+] 2-Andar")
             
             option = int(input("ação --> "))
 
             if(option == 1):
-               self.writer_effect("Você começa a observar.\nVocê encontra um grande numero ossada de espalhadas pelo deserto")
-            
+                self.writer_effect("\n\nVocê começa a observar.\nVocê encontra um grande numero ossada de espalhadas pelo deserto")
+                self.writer_effect(f"\n{self.name_hero}: Parece que teve uma grande batalha por aqui...")
+
             elif(option == 2):
-                print("")
+                self.writer_effect("\n\nApós um bom tempo de caminhada. Você sente um leve tremor no chão")
+                self.writer_effect(f"\n{self.name_hero}: Oque foi isso?\n{self.name_hero}: Tem algo grande passando por aqui")
+                self.writer_effect("\n\nO tremor começa a ficar cada fez mais intenso")
+                self.writer_effect("\nUma serpente extremamente grande e faminta começa a sair de dentro da areia")
+
+                print("\nPreparese para lutar")
+                print(enemys_arts[2])
+
+                self.figthing()
+                
+                self.writer_effect("\n\nVocê consegue subir na cabeça da serpente e corta-la. Fazendo a serpente se desaparecer por completo")
+                self.writer_effect("\n\nDerrepente você começa a ser sugado pela areia")
+                self.writer_effect(f"\n\n{self.name_hero}: ohh não... Não consigo me mecher")
+                self.writer_effect("\n\nVocê é sugado pela areia...")
+                break
             
             else:
                 print("[!] OPÇÃO INVALIDA!")
 
         return self
-            
+    
+
+    def fase3(self):
+        self.enemy = Chimera()
+        self.battle_sys.grp.set_enemy_life(self.enemy.enemy_life)
+        self.battle_sys.grp.set_life_player(10)
+        
+        self.writer_effect(f"\n\n{self.name_hero}: hmpf...")
+        self.writer_effect("\n\nApós ser engolida pela a areia do deserto voçe acorda em uma ruina")
+        self.writer_effect("\nE uma voz rouca ecoa pelo lugar")
+        
+        self.writer_effect("\n\nChimera: haahaah Vejo que você chegou até aqui...")
+        self.writer_effect("\nChimera: Você sair daqui sem me derrotar.")
+        self.writer_effect("\nChimera: O pesadelo é eterno...")
+        
+        self.writer_effect(f"\n\n{self.name_hero}: Apareça!!!")
+        self.writer_effect(f"\n{self.name_hero}: Onde está você!!!!")
+
+        self.writer_effect(f"\nChimera: hahahahah O Seu desejo é uma ordem!!!")
+
+        self.writer_effect("\nUma chimera aparece na sua frente.")
+        print(enemys_arts[0])
+
+        self.figthing()
+
+        self.writer_effect("\n\nDepois de uma longa e exaustiva batalha você consegue destruir a chimera com um golpe em seu coração")
+        self.writer_effect(f"\n\n{self.name_hero}: humpf... humpf...")
+        
+        self.writer_effect("\n\nTodo o pesadelo começa a ser destruido...")
+        self.writer_effect(f"\n\n{self.name_hero}: humm!!!")
+        self.writer_effect(f"\n\nVocê acorda do pesadelo")
+
+        print(
+'''  ██████  █    ██  ██▀███   ██▒   █▓ ██▓ ██▒   █▓▓█████ ▓█████▄ 
+▒██    ▒  ██  ▓██▒▓██ ▒ ██▒▓██░   █▒▓██▒▓██░   █▒▓█   ▀ ▒██▀ ██▌
+░ ▓██▄   ▓██  ▒██░▓██ ░▄█ ▒ ▓██  █▒░▒██▒ ▓██  █▒░▒███   ░██   █▌
+  ▒   ██▒▓▓█  ░██░▒██▀▀█▄    ▒██ █░░░██░  ▒██ █░░▒▓█  ▄ ░▓█▄   ▌
+▒██████▒▒▒▒█████▓ ░██▓ ▒██▒   ▒▀█░  ░██░   ▒▀█░  ░▒████▒░▒████▓ 
+▒ ▒▓▒ ▒ ░░▒▓▒ ▒ ▒ ░ ▒▓ ░▒▓░   ░ ▐░  ░▓     ░ ▐░  ░░ ▒░ ░ ▒▒▓  ▒ 
+░ ░▒  ░ ░░░▒░ ░ ░   ░▒ ░ ▒░   ░ ░░   ▒ ░   ░ ░░   ░ ░  ░ ░ ▒  ▒ 
+░  ░  ░   ░░░ ░ ░   ░░   ░      ░░   ▒ ░     ░░     ░    ░ ░  ░ 
+      ░     ░        ░           ░   ░        ░     ░  ░   ░ ''')
+   
+        return self

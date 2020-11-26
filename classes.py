@@ -11,7 +11,6 @@ class Hero(Game_rules):
 		self.name_hero = name
 
 	def __del__(self):
-		print("Você morreu!!!")
 		print("GAME OVER!!!")
 
 	def normal_attack(self):
