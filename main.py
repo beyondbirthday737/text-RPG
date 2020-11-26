@@ -30,7 +30,7 @@ def init_game():
 
 	if(option == 'm' or option == 'M' or option == 'w' or option == 'W' or option == 'p' or option == 'P'):
 		game = Main_game(name_hero, option)
-		game.fase3()
+		game.fase1().fase2().fase3()
 		
 	else:
 		print("[!] OPÇÃO INVALIDA!")
