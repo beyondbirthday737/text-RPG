@@ -14,12 +14,7 @@ class Battle_system():
 
 		if(dice_player_value > dice_enemy_value):
 			self.grp.set_enemy_life(self.grp.get_enemy_life() - player_damange)
-		
-		if(self.grp.get_life_player() <= 0):
-			print("Você perdeu!!!!")
-
-		if(self.grp.get_enemy_life() <= 0):
-			print("O inimigo morreu!!!")
+	
 			
 		print(f"\n\n[x] Player life: {self.grp.get_life_player()}")
 		print(f"[x] Enemy life: {self.grp.get_enemy_life()}")

@@ -18,11 +18,15 @@ class Enemy(Game_rules):
 class Chimera(Enemy):
     def __init__(self):
         super().__init__()
-        self.enemy_life = 15
+        self.__enemy_life = 15
 
 
     def __del__(self):
         print("A Chimera morreu!!!")
+
+
+    def get_life(self):
+        return self.__enemy_life
 
 
     def heavy_attack(self):
@@ -42,10 +46,14 @@ class Chimera(Enemy):
 class Minotaur(Enemy):
     def __init__(self):
         super().__init__()
-        self.enemy_life = 7
+        self.__enemy_life = 7
 
     def __del__(self):
         print("O minotaur morreu")
+
+
+    def get_life(self):
+        return self.__enemy_life
 
 
     def heavy_attack(self):
@@ -65,11 +73,15 @@ class Minotaur(Enemy):
 class Basilisk(Enemy):
     def __init__(self):
         super().__init__()
-        self.enemy_life = 10
+        self.__enemy_life = 10
 
 
     def __del__(self):
         print("O Basislisk morreu!!!")
+
+
+    def get_life(self):
+        return self.__enemy_life
 
 
     def heavy_attack(self):

@@ -68,7 +68,7 @@ class Main_game:
 
     def fase1(self):
         self.enemy = Minotaur()
-        self.battle_sys.grp.set_enemy_life(self.enemy.enemy_life)
+        self.battle_sys.grp.set_enemy_life(self.enemy.get_life())
 
         text = f"""{self.name_hero}: ...
 Você acorda em lugar escuro.
@@ -108,7 +108,7 @@ Você acorda em lugar escuro.
 
     def fase2(self):
         self.enemy = Basilisk()
-        self.battle_sys.grp.set_enemy_life(self.enemy.enemy_life)
+        self.battle_sys.grp.set_enemy_life(self.enemy.get_life())
         self.battle_sys.grp.set_life_player(10)
 
         self.writer_effect(f"\n\n\n{self.name_hero}: Que lugar é esse ?")
@@ -151,7 +151,7 @@ Você acorda em lugar escuro.
 
     def fase3(self):
         self.enemy = Chimera()
-        self.battle_sys.grp.set_enemy_life(self.enemy.enemy_life)
+        self.battle_sys.grp.set_enemy_life(self.enemy.get_life())
         self.battle_sys.grp.set_life_player(10)
         
         self.writer_effect(f"\n\n{self.name_hero}: hmpf...")

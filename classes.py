@@ -8,7 +8,7 @@ class Hero(Game_rules):
 	"""
 	def __init__(self, name):
 		super().__init__()
-		self.name_hero = name
+		self.__name_hero = name
 
 	def __del__(self):
 		print("GAME OVER!!!")
