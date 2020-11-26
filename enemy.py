@@ -6,62 +6,82 @@ class Enemy(Game_rules):
 	   ele irá herdar atributos da classe Game_rules
 	"""
 	def __init__(self):
-		pass
-		
+		super().__init__()
 
 	def normal_attack(self):
 		dice_value = self.roll_dice()
 		if dice_value < 2:
-			return [False, dice_value]
+			return dice_value
+		return dice_value
 
 
 class Chimera(Enemy):
-    def __init__():
+    def __init__(self):
+        super().__init__()
         self.enemy_life = 15
 
-    def beast_attack():
+
+    def __del__(self):
+        print("A Chimera morreu!!!")
+
+
+    def heavy_attack(self):
         dice_value = self.roll_dice()
-		if dice_value < 3:
-			return [False, dice_value]
-		return [True, dice_value]
+        if dice_value < 3:
+	        return dice_value
+        return dice_value
     
-    def puff_of_fire():
+
+    def super_attack(self):
         dice_value = self.roll_dice()
-		if dice_value < 4:
-			return [False, dice_value]
-		return [True, dice_value]
+        if dice_value < 4:
+           return dice_value
+        return dice_value
 
 
-class Troll(Enemy):
-    def __init__():
+class Minotaur(Enemy):
+    def __init__(self):
+        super().__init__()
         self.enemy_life = 7
 
-    def violent_attack():
+    def __del__(self):
+        print("O minotaur morreu")
+
+
+    def heavy_attack(self):
         dice_value = self.roll_dice()
-		if dice_value < 3:
-			return [False, dice_value]
-		return [True, dice_value]
-    
-    def flay_live():
+        if dice_value < 3:
+            return dice_value
+        return dice_value
+
+
+    def super_attack(self):
         dice_value = self.roll_dice()
-		if dice_value < 4:
-			return [False, dice_value]
-		return [True, dice_value]
+        if dice_value < 4:
+            return dice_value
+        return dice_value
 
 
 class Basilisk(Enemy):
-     def __init__():
+    def __init__(self):
+        super().__init__()
         self.enemy_life = 10
 
-    def violent_attack():
+
+    def __del__(self):
+        print("O Basislisk morreu!!!")
+
+
+    def heavy_attack(self):
         dice_value = self.roll_dice()
-		if dice_value < 3:
-			return [False, dice_value]
-		return [True, dice_value]
-    
-    def flay_live():
+        if dice_value < 3:
+           return dice_value
+        return dice_value
+
+
+    def super_attack(self):
         dice_value = self.roll_dice()
-		if dice_value < 4:
-			return [False, dice_value]
-		return [True, dice_value]
+        if dice_value < 4:
+            return dice_value
+        return dice_value
 

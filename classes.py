@@ -1,4 +1,6 @@
 from rules import *
+import sys
+
 
 class Hero(Game_rules):
 	"""Classe para padronizar o heroi
@@ -8,10 +10,16 @@ class Hero(Game_rules):
 		super().__init__()
 		self.name_hero = name
 
+	def __del__(self):
+		print("Você morreu!!!")
+		print("GAME OVER!!!")
+
 	def normal_attack(self):
 		dice_value = self.roll_dice()
 		if dice_value < 2:
-			return [False, dice_value]
+			print("Você errou o atack")
+			return dice_value
+		return dice_value
 
 
 class Mage(Hero):
@@ -19,17 +27,19 @@ class Mage(Hero):
 	def __init__(self, name_hero):
 		super().__init__(name_hero)
 
-	def freeze_attack(self):
+	def heavy_attack(self):
 		dice_value = self.roll_dice()
 		if dice_value < 3:
-			return [False, dice_value]
-		return [True, dice_value]
+			print("Você errou o atack")
+			return dice_value
+		return dice_value
 
-	def ultra_fire_boll(self):
+	def super_attack(self):
 		dice_value = self.roll_dice()
 		if dice_value < 4:
-			return [False, dice_value]
-		return [True, dice_value]
+			print("Você errou o atack")
+			return dice_value
+		return dice_value
 
 
 class Warrior(Hero):
@@ -40,14 +50,16 @@ class Warrior(Hero):
 	def heavy_attack(self):
 		dice_value = self.roll_dice()
 		if dice_value < 3:
-			return [False, dice_value]
-		return [True, dice_value]
+			print("Você errou o atack")
+			return dice_value
+		return dice_value
 
-	def brutal_attack(self):
+	def super_attack(self):
 		dice_value = self.roll_dice()
 		if dice_value < 4:
-			return [False, dice_value]
-		return [True, dice_value]
+			print("Você errou o atack")
+			return dice_value
+		return dice_value
 
 
 class Paladin(Hero):
@@ -55,14 +67,16 @@ class Paladin(Hero):
 	def __init__(self, name_hero):
 		super().__init__(name_hero)
 
-	def spiritual_attack(self):
+	def heavy_attack(self):
 		dice_value = self.roll_dice()
 		if dice_value < 3:
-			return [False, dice_value]
-		return [True, dice_value]
+			print("Você errou o atack")
+			return dice_value
+		return dice_value
 
-	def blast_attack(self):
+	def heavy_attack(self):
 		dice_value = self.roll_dice()
 		if dice_value < 4:
-			return [False, dice_value]
-		return [True, dice_value]
+			print("Você errou o atack")
+			return dice_value
+		return dice_value
